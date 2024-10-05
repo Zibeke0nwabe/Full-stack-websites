@@ -12,30 +12,29 @@ const Footer = () => {
           </h4>
           <ul>
             <li>
-              <a href="https://esgela.com/coding-bootcamp" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+              <a href="https://github.com/Onwabe23/React-Projects/tree/main/FULL%20STACK%20ESGELA" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                 Esgela Coding Bootcamp
               </a>
               <p className="text-sm text-gray-400 mt-1">Interactive platform teaching web development technologies.</p>
             </li>
             <li className="mt-4">
-              <a href="https://esgela.com/online-application" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+              <a href="https://www.esgela.onrender.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                 Esgela Online Application
               </a>
               <p className="text-sm text-gray-400 mt-1">Streamlined process for submitting applications and receiving student numbers.</p>
             </li>
             <li className="mt-4">
-              <a href="https://portstjohnstourguide.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+              <a href="https://gugu-ba8e9.web.app" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
                 Port St. Johns Tour Guider
               </a>
               <p className="text-sm text-gray-400 mt-1">Comprehensive guide services around Port St. Johns.</p>
             </li>
             <li className="mt-4">
-              <a href="https://tournamentmanager.com" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
-                Sports Tournament Manager
+              <a href="https://fixtureapp-e3601.web.app/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">
+                Sports Fixture Generator
               </a>
               <p className="text-sm text-gray-400 mt-1">Manage teams, schedules, and game settings for various sports tournaments.</p>
             </li>
-            {/* Add more project links and details as needed */}
           </ul>
         </div>
 
@@ -76,7 +75,7 @@ const Footer = () => {
             </li>
             <li className="flex justify-center md:justify-start items-center mt-2">
               <FaLinkedin className="mr-2 text-orange-500" /> 
-              <a href="https://linkedin.com/in/onwabe" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/onwabe-zibeke-74b329228/" target="_blank" rel="noopener noreferrer" className="hover:text-orange-500">LinkedIn</a>
             </li>
             <li className="flex justify-center md:justify-start items-center mt-2">
               <FaGithub className="mr-2 text-orange-500" /> 

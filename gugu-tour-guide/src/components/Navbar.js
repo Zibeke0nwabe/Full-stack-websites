@@ -6,49 +6,57 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      console.log('Clicked');
+    } else {
+      console.log('is closed');
+    }
+    setIsMenuOpen(prevState => !prevState);
   };
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo Section */}
-          <div className="flex-shrink-0">
-            <a href="/" className="text-white text-2xl md:text-2xl sm:text-xl font-bold">Yonwaba</a>
-          </div>
+    <nav className="relative flex justify-between items-center p-4 bg-white shadow-md">
+      {/* Logo Section */}
+      <a href="/" className="text-2xl font-bold">Yonwaba</a>
 
-          {/* Navigation Links for Desktop */}
-          <div className="hidden md:flex space-x-8 font-semibold">
-            <a href="#home" className="text-white hover:text-blue-500 hover:underline">Home</a>
-            <a href="#about" className="text-white hover:text-blue-500 hover:underline">About</a>
-            <a href="#services" className="text-white hover:text-blue-500 hover:underline">Services</a>
-            <a href="#contact" className="text-white hover:text-blue-500 hover:underline">Contact</a>
-          </div>
+      {/* Desktop Menu */}
+      <div className="hidden md:flex space-x-8 font-semibold">
+        <a href="/#home" className="hover:text-blue-500">Home</a>
+        <a href="/#about" className="hover:text-blue-500">About</a>
+        <a href="/#services" className="hover:text-blue-500">Services</a>
+        <a href="/#contact" className="hover:text-blue-500">Contact</a>
+        <a href="#book" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Book Now</a>
+      </div>
 
-          {/* Book Now Button for Desktop */}
-          <div className="hidden md:block">
-            <a href="#book" className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Book Now</a>
-          </div>
+      {/* Mobile Menu Icon */}
+      <button
+        onClick={toggleMenu}
+        className="md:hidden p-2 text-gray-700 cursor-pointer"
+        aria-label="Toggle menu"
+      >
+        <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" />
+      </button>
 
-          {/* Menu Icon for Mobile */}
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu} className="text-white focus:outline-none">
-              <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="lg" />
-            </button>
-          </div>
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 bg-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}
+      >
+        <div className="flex justify-end p-4">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-700 cursor-pointer"
+            aria-label="Close menu"
+          >
+            <FontAwesomeIcon icon={faTimes} size="lg" />
+          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-4 font-semibold text-center">
-            <a href="#home" className="text-white block hover:text-blue-500 hover:underline">Home</a>
-            <a href="#about" className="text-white block hover:text-blue-500 hover:underline">About</a>
-            <a href="#services" className="text-white block hover:text-blue-500 hover:underline">Services</a>
-            <a href="#contact" className="text-white block hover:text-blue-500 hover:underline">Contact</a>
-            <a href="#book" className="px-4 py-2 bg-blue-500 text-white rounded-md block mx-auto w-max hover:bg-blue-600">Book Now</a>
-          </div>
-        )}
+        <div className="flex flex-col items-center justify-center h-full space-y-4">
+          <a href="/#home" onClick={toggleMenu} className="text-2xl font-semibold hover:text-blue-500">Home</a>
+          <a href="/#about" onClick={toggleMenu} className="text-2xl font-semibold hover:text-blue-500">About</a>
+          <a href="/#services" onClick={toggleMenu} className="text-2xl font-semibold hover:text-blue-500">Services</a>
+          <a href="/#contact" onClick={toggleMenu} className="text-2xl font-semibold hover:text-blue-500">Contact</a>
+          <a href="#book" onClick={toggleMenu} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Book Now</a>
+        </div>
       </div>
     </nav>
   );

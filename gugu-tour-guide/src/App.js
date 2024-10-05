@@ -1,6 +1,5 @@
 // src/App.js
 import React from 'react';
-import Navbar from './components/Navbar';
 import Hero from './components/HeroSection';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
