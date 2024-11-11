@@ -3,7 +3,7 @@ import React from 'react';
 // Update the CourseCard component to accept an icon component and its color
 const CourseCard = ({ title, description, hours, level, icon: Icon, iconColor }) => {
   return (
-    <div className="bg-white shadow p-4 rounded border border-gray-300 flex flex-col h-full">
+    <div className="bg-white p-4 rounded border border-gray-300 flex flex-col h-full">
       <div className="w-full h-32 flex items-center justify-center mb-4 rounded bg-black">
         {/* Render the icon with its color */}
         {Icon ? (

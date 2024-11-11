@@ -57,7 +57,7 @@ const Footer = () => {
           We'd love to hear from you. Reach out to us through the following channels:
         </p>
         <ul className="space-y-2">
-          <li>Email: <a href="mailto:support@esgela.com" className="text-yellow-500 hover:underline">support@esgela.com</a></li>
+          <li>Email: <a href="mailto:support@esgela.com" className="text-yellow-500 hover:underline">onwabe.zibeke@esgela.com</a></li>
           <li>Phone: <a href="tel:+1234567890" className="text-yellow-500 hover:underline">+1 234 567 890</a></li>
         </ul>
       </div>

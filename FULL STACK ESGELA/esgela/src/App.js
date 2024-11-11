@@ -10,6 +10,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import CourseDetails from './components/CourseDetails';
 import Html from './components/Html/Html';
+import Typing from './components/typing/Typing';
 import MyCourses from './components/MyCourses';
 import Profile from './components/Profile';
 import Support from './components/Support';
@@ -75,6 +76,7 @@ const App = () => {
           } />
           <Route path="/course/:courseId" element={<CourseDetails courses={courses} />} />
           <Route path="/html" element={<Html />} />
+          <Route path="/typing" element={<Typing />} />
           <Route path="/my-courses" element={<MyCourses />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/update-profile" element={<Profile />} />

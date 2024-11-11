@@ -8,13 +8,13 @@ const NavBar = ({ userEmail }) => {
     <nav className="bg-black shadow-lg fixed top-0 left-0 w-full z-10 p-6 flex justify-between items-center">
       <div className="flex items-center space-x-4">
         <div className="text-2xl font-bold">
-          <Link to="/">
+          <Link to="/home">
             <span className="bg-yellow-500 text-black px-2 py-1 rounded mr-1">e</span>
             <span className="text-white">sgela.com</span>
           </Link>
         </div>
         <div className="space-x-4 hidden md:flex">
-          <Link to="/" className="text-white hover:text-yellow-500 transition font-semibold duration-300">Home</Link>
+          <Link to="/home" className="text-white hover:text-yellow-500 transition font-semibold duration-300">Home</Link>
           <Link to="/my-courses" className="text-white hover:text-yellow-500 transition font-semibold duration-300">My Courses</Link>
           <Link to="/profile" className="text-white hover:text-yellow-500 transition font-semibold duration-300">Profile</Link>
           <Link to="/support" className="text-white hover:text-yellow-500 transition font-semibold duration-300">Support</Link>

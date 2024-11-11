@@ -1,16 +1,30 @@
 // src/components/Html/Html.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LessonSection from './LessonSection';
 import CodingSection from './CodingSection';
 import ResultsSection from './ResultsSection';
 import TestSection from './TestSection'; // Import the TestSection component
 import '../../App.css'; // Importing App.css
 
-
 const Html = () => {
   const [code, setCode] = useState("");
   const [sectionIndex, setSectionIndex] = useState(0);
-  const [showTest, setShowTest] = useState(false); // New state to show/hide the test
+  const [showTest, setShowTest] = useState(false); // State to show/hide the test
+  const [isSmallScreen, setIsSmallScreen] = useState(false); // State to track screen width
+
+  useEffect(() => {
+    // Function to check screen width and set isSmallScreen state
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 970);
+    };
+
+    // Initial check and setting up event listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleNextSection = () => {
     if (sectionIndex < 14) { // Assuming there are 15 sections (0-14)
@@ -27,6 +41,16 @@ const Html = () => {
     setShowTest(false); // Hide the test and go back to lessons
   };
 
+  if (isSmallScreen) {
+    return (
+      <div className="flex flex-col items-center p-4 text-center">
+        <p className="text-lg font-semibold text-gray-800">
+          This website is optimized for PC and desktop viewing.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-center p-4">
       {!showTest ? (
@@ -39,7 +63,6 @@ const Html = () => {
         </main>
       ) : (
         <TestSection />
-        
       )}
       <div className="button-container mt-4 flex justify-end space-x-4">
         {!showTest ? (
@@ -67,7 +90,6 @@ const Html = () => {
           </button>
         )}
       </div>
-      
     </div>
   );
 };
